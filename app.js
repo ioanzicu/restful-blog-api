@@ -3,12 +3,11 @@ require('./config/config');
 var bodyParser 			= require("body-parser");
 	methodOverride 		= require("method-override"),
 	expressSanitizer 	= require("express-sanitizer"),
-	mongoose   			= require("mongoose");
+	{mongoose}			= require('./db/mongoose');
 	express  			= require("express"),
 	app 				= express();
 
 // APP CONFIG
-mongoose.connect("mongodb://localhost/restful_blog_app", {useNewUrlParser: true});
 app.set("view engine", "ejs");
 app.use(express.static("public/css")); 
 app.use(express.static("public/js")); 
@@ -28,12 +27,6 @@ var blogSchema = new mongoose.Schema({
 });
 
 var Blog = mongoose.model("Blog", blogSchema);
-
-// Blog.create({
-// 	title: "Test Blog",
-// 	image: "/img1.jpg",
-// 	body: "Hello Thi is a blog Post!"
-// });
 
 // RESTFUL ROUTES
 app.get("/", function(req, res){
