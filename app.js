@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(expressSanitizer());
 app.use(methodOverride("_method"));
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 // MONGOSE/MODEL CONFIG
 var blogSchema = new mongoose.Schema({
