@@ -1,3 +1,5 @@
+require('./config/config');
+
 var bodyParser 			= require("body-parser");
 	methodOverride 		= require("method-override"),
 	expressSanitizer 	= require("express-sanitizer"),
@@ -14,6 +16,8 @@ app.use(express.static("img"));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(expressSanitizer());
 app.use(methodOverride("_method"));
+
+const port = process.env.PORT;
 
 // MONGOSE/MODEL CONFIG
 var blogSchema = new mongoose.Schema({
@@ -116,6 +120,6 @@ app.delete("/blogs/:id", function(req, res){
 });
 
 // SERVER LISTENING
-app.listen(3000, process.env.IP, process.env.IP ,function(req, res){
-	console.log("Blog App Started!!!");
+app.listen(port, () => {
+	console.log(`Blog App Started at port ${port}`);
 });

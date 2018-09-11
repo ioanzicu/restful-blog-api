@@ -1,11 +1,11 @@
 {
 	"test": {
 		"PORT": 3000,
-		"MONGODB_URI": "mongodb://localhost:27017/BlogAppTest",
+		"MONGODB_URI": "mongodb://localhost:27017/BlogAppTest"
 	},
 
 	"development": {
 		"PORT": 3000,
-		"MONGODB_URI": "mongodb://localhost:27017/BlogApp",
+		"MONGODB_URI": "mongodb://localhost:27017/BlogApp"
 	} 
 }
