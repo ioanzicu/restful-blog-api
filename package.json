@@ -1,0 +1,21 @@
+{
+  "name": "restfulblogapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha /**/*.test.js --timeout 10000",
+    "test-watch": "nodemon --exec \"npm test\""
+  },
+  "author": "Ioan",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-sanitizer": "^1.0.4",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.2.9"
+  }
+}
